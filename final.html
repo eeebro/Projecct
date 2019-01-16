@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+	.container {
+	  position: relative;
+	  text-align: center;
+	  color: rgb(10, 10, 10);
+	  font-size: 22pt
+	}
+	.centered {
+	  position: absolute;
+	  top: 5%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  color:darkred;
+	  font-size: 30pt;
+	}
+	.bcentered {
+    position:absolute;
+    text-align: center;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.acentered{
+    position: absolute;
+    text-align: center;
+    color:rgb(12, 12, 12);
+    font-size: 20pt;
+    top:10%;
+    left: 10%;
+    
+}
+</style> 
+
+<div class="container">
+	<img src="ppo.png"style="width:100%;">
+	<div class="centered">Digits</div>
+	<div class="acentered">Instruction: You will be introduced 10 two-digit numbers (any from 10 to 99) for a period of 40 seconds. You will be required to reproduce these numbers in any sequence for a given time of 150 seconds.</div>
+  </div>
+
+<title> project </title></head>
+
+
+<div class ="bcentered">
+	<script type="text/javascript">
+
+
+
+var cc = 40 ;
+
+var n = ["10","45","65","80","45","43","21","11","33","61"];
+
+function nums()
+
+{
+
+document.getElementById("dim").innerHTML = n;
+
+}
+
+
+
+var interval = setInterval(function()
+
+	{
+
+	document.getElementById("counting").innerHTML = --cc;
+
+	if (cc==0){
+
+	clearInterval(interval);
+
+	document.getElementById("dim").innerHTML = "Numbers faded ";
+
+
+
+	}
+
+
+
+},1000);
+
+
+
+		function another()
+
+		
+
+		{
+
+		var cc = 150 ;
+
+var interval = setInterval(function()
+
+	{
+
+	document.getElementById("s").innerHTML = --cc;
+
+	if (cc==0){
+
+	clearInterval(interval);
+
+	document.getElementById("v").innerHTML = n;
+
+}
+
+},1000);
+
+
+
+		
+
+		}
+
+	</script> 
+
+</head>
+
+<body onload="nums()">
+
+
+<div align= "center" id="counting"></div>
+
+<br />
+
+
+
+ <div id="dim"> </div>
+
+ </br >
+
+ 
+
+ 
+
+<textarea id="tx" placeholder ="enter the values you can remember " cols="40" rows="5"></textarea>
+
+<p> first giving numbers will appear after the count down  compare them with what you remember from the text area </p>
+
+<div id="ttr"> </div>
+
+<button onclick="another()" onmouseenter="enabled"> click to start 150 count down  </button>
+
+
+
+  
+
+ <div id="s"></div>
+
+<br />
+
+
+
+ <div id="v"> </div>
+
+ </br >
+
+</body>
+
+	</html>
